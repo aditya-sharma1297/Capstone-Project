@@ -9,7 +9,7 @@ def pixel_accuracy(pred, label, ignore_index=255):
     correct = (pred == label) & valid
     return correct.sum().item() / valid.sum().item()
 
-# Computes mean Intersection over Union (IoU) across all classes
+# Computing mean Intersection over Union (IoU) across all classes
 def mean_iou(pred, label, num_classes, ignore_index=255):
     ious = []
     pred = pred.view(-1)
