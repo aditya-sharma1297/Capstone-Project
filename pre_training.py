@@ -12,8 +12,8 @@ from model import get_multimodal_deeplabv3plus
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 BATCH_SIZE = 32
 NUM_EPOCHS = 60
-DATA_ROOT_RGB = os.path.join("/Users/adityasharma/Desktop/Pretraining_Set/rgb")
-DATA_ROOT_LIDAR = os.path.join("/Users/adityasharma/Desktop/Pretraining_Set/lidar_depth")
+DATA_ROOT_RGB = os.path.join("Pretraining_Set/rgb")
+DATA_ROOT_LIDAR = os.path.join("Pretraining_Set/lidar_depth")
 
 # Base dataset, loading raw RGB and LiDAR image pairs
 class RGBLiDARDataset(Dataset):
