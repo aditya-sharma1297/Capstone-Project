@@ -17,9 +17,9 @@ PRETRAINED_ENCODER_PATH = "encoder_epoch_60.pth"
 SAVE_PATH = "finetuned_multimodal_deeplabv3.pth"
 
 # Defining Dataset Paths for RGB images, LiDAR Depth images and Segmentation Labels
-DATA_ROOT_RGB = os.path.join("/Users/adityasharma/Desktop/Fine_Tuning_Set/rgb")
-DATA_ROOT_LIDAR = os.path.join("/Users/adityasharma/Desktop/Fine_Tuning_Set/lidar_depth")
-DATA_ROOT_LABEL = os.path.join("/Users/adityasharma/Desktop/Fine_Tuning_Set/rgb_labels")
+DATA_ROOT_RGB = os.path.join("Fine_Tuning_Set/rgb")
+DATA_ROOT_LIDAR = os.path.join("Fine_Tuning_Set/lidar_depth")
+DATA_ROOT_LABEL = os.path.join("Fine_Tuning_Set/rgb_labels")
 
 # Image Pre-processing transforms
 transform = T.Compose([
