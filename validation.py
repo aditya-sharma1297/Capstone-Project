@@ -14,9 +14,9 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.ba
 NUM_CLASSES = 35
 BATCH_SIZE = 1
 MODEL_PATH = "finetuned_multimodal_deeplabv3.pth"
-DATA_ROOT_RGB = os.path.join("/Users/adityasharma/Desktop/Validation_Set/rgb")
-DATA_ROOT_LIDAR = os.path.join("/Users/adityasharma/Desktop/Validation_Set/lidar_depth")
-DATA_ROOT_LABEL = os.path.join("/Users/adityasharma/Desktop/Validation_Set/rgb_labels")
+DATA_ROOT_RGB = os.path.join("Validation_Set/rgb")
+DATA_ROOT_LIDAR = os.path.join("Validation_Set/lidar_depth")
+DATA_ROOT_LABEL = os.path.join("Validation_Set/rgb_labels")
 
 # Saving predictions to a directory
 SAVE_DIR = "Final Predictions"
