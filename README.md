@@ -8,3 +8,44 @@ data as input, we fine-tune the **DeepLabV3+** segmentation model to improve per
 Our work leverages the **RELLIS-3D** dataset, a benchmark for UGV research and demonstrates improved segmentation performance under label-scarce conditions.
 
 # Dataset
+From [Rellis-3D Dataset](https://github.com/unmannedlab/RELLIS-3D), download Full Images (RGB), Full Image Annotations ID Format and Ouster LiDAR SemanticKITTI Format (.bin format) data. Once downloaded, all the folders will have a similar structure as follows:
+
+```
+RELLIS-3D LiDAR
+|--Rellis Ouster Bin
+   |-- 00000
+       |-- os1_cloud_node_kitti_bin
+           |-- .bin format files
+   |-- 00001
+       |-- os1_cloud_node_kitti_bin
+           |-- .bin format files
+   |-- 00002
+       |-- os1_cloud_node_kitti_bin
+           |-- .bin format files
+   |-- 00003
+       |-- os1_cloud_node_kitti_bin
+           |-- .bin format files
+   |-- 00004
+       |-- os1_cloud_node_kitti_bin
+           |-- .bin format files
+
+RELLIS-3D Images/Label IDs
+|-- 00000
+    |-- pylon_camera_node/pylon_camera_node_label_id
+        |-- images
+|-- 00001
+    |-- pylon_camera_node/pylon_camera_node_label_id
+        |-- images
+|-- 00002
+    |-- pylon_camera_node/pylon_camera_node_label_id
+        |-- images
+|-- 00003
+    |-- pylon_camera_node/pylon_camera_node_label_id
+        |-- images
+|-- 00004
+    |-- pylon_camera_node/pylon_camera_node_label_id
+        |-- images        
+```
+
+# Preparing the Data
+   
