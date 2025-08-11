@@ -8,7 +8,7 @@ data as input, we fine-tune the **DeepLabV3+** segmentation model to improve per
 Our work leverages the **RELLIS-3D** dataset, a benchmark for UGV research and demonstrates improved segmentation performance under label-scarce conditions.
 
 ## Dataset
-From [Rellis-3D Dataset](https://github.com/unmannedlab/RELLIS-3D), download Full Images (RGB), Full Image Annotations ID Format and Ouster LiDAR SemanticKITTI Format (.bin format) data. Once downloaded, all the folders will have a similar structure as follows:
+From [Rellis-3D Dataset](https://github.com/unmannedlab/RELLIS-3D), download Full Images (RGB), Full Image Annotations ID Format, Ouster LiDAR SemanticKITTI Format (.bin format) and Ouster LiDAR Annotation data. Once downloaded, all the folders will have a similar structure as follows:
 
 ```
 RELLIS-3D LiDAR
