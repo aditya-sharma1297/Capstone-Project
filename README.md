@@ -7,7 +7,7 @@ This project addresses the challenge of limited annotated data in off-road envir
 data as input, we fine-tune the **DeepLabV3+** segmentation model to improve perception and generalization in low-label regimes.
 Our work leverages the **RELLIS-3D** dataset, a benchmark for UGV research and demonstrates improved segmentation performance under label-scarce conditions.
 
-# Dataset
+## Dataset
 From [Rellis-3D Dataset](https://github.com/unmannedlab/RELLIS-3D), download Full Images (RGB), Full Image Annotations ID Format and Ouster LiDAR SemanticKITTI Format (.bin format) data. Once downloaded, all the folders will have a similar structure as follows:
 
 ```
@@ -47,5 +47,29 @@ RELLIS-3D Images/Label IDs
         |-- images        
 ```
 
-# Preparing the Data
-   
+## Preparing the Data
+### Step 1: Generating LiDAR Depth Images
+The first step is to generate LiDAR depth images from the raw Ouster LiDAR .bin files using the script generate_lidar_depth.py. These depth images are essential and will later be used alongside the RGB images during training
+
+### Step 2: Creating Dataset Split
+The next step is to create a dataset split for Pre-training, Fine Tuning and Validation. For this, the script prepare_dataset_split.py can be used. It copies RGB images, labels, and LiDAR data from the main dataset into separate folders for each split. The script ensures that there are no duplicate images across splits by checking existing files before copying.
+
+## Requirements
+* Python ≥ 3.8
+* PyTorch ≥ 1.10
+* segmentation_models_pytorch
+* torchvision
+* imagehash
+* matplotlib, tqdm, opencv-python, Pillow, etc.
+
+## Script Execution Order
+1. generate_lidar_depth.py – Generate LiDAR-based depth maps from point clouds.
+2. prepare_dataset_split.py – Split the dataset into pre-training, fine tuning and validation sets.
+3. pre_training.py – Run SimCLR-style self-supervised learning on RGB and depth data.
+4. fine_tuning.py – Fine-tune the segmentation model using labeled data.
+5. validation.py – Evaluate model performance on the validation set.
+
+Following modules are imported and used by the main scripts:
+1. utils.py - Utility functions for data processing, visualization, and general helpers.
+2. dataset.py - Defines dataset classes and PyTorch data loaders.
+3. model.py - Implements the DeepLabV3+ segmentation model and related components.
