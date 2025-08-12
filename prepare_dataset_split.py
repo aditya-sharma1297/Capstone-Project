@@ -11,21 +11,21 @@ def extract_frame_id(filename):
     return match.group(1) if match else None
 
 # Paths to existing sets, used to avoid overlap
-test_rgb_path = "/Users/adityasharma/Desktop/Fine_Tuning_Set/rgb"
-test_rgb_path_2 = "/Users/adityasharma/Desktop/Validation_Set/rgb"
+test_rgb_path = "Fine_Tuning_Set/rgb"
+test_rgb_path_2 = "Validation_Set/rgb"
 
 # Output path for new folder
-val_output_root = "/Users/adityasharma/Desktop/Pretraining_Set"
+val_output_root = "Pretraining_Set"
 
 # Creating subfolders for RGB images, labels, LiDAR data and LiDAR labels
 for sub in ["rgb", "rgb_labels", "lidar_bin", "lidar_label"]:
     os.makedirs(os.path.join(val_output_root, sub), exist_ok=True)
 
 # Defining source paths 
-rgb_root = "/Volumes/One Touch/Rellis-3D Images"
-rgb_label_root = "/Volumes/One Touch/Rellis-3D Labels"
-lidar_bin_root = "/Users/adityasharma/Desktop/Capstone Project/LiDAR Data/Rellis-3D Ouster Bin"
-lidar_label_root = "/Users/adityasharma/Desktop/Capstone Project/LiDAR Data/Rellis-3D Ouster Annotation"
+rgb_root = "Rellis-3D Images"
+rgb_label_root = "Rellis-3D Labels"
+lidar_bin_root = "Rellis-3D Ouster Bin"
+lidar_label_root = "Rellis-3D Ouster Annotation"
 
 # Subfolders inside each diretory
 rgb_sub = "pylon_camera_node"
